@@ -1,0 +1,13 @@
+﻿<AuthorizeView>
+    <Authorized>
+        Hello, @context?.User?.Identity?.Name!
+        <form method="post" action="authentication/logout">
+            <AntiforgeryToken />
+            <input type="hidden" name="returnUrl" value="/signed-out" />
+            <FluentButton Type="ButtonType.Submit" Appearance="Appearance.Lightweight">Log out</FluentButton>
+        </form>
+    </Authorized>
+    <NotAuthorized>
+        <FluentNavLink Href="/authentication/login" IconColor="Color.Accent">Log in</FluentNavLink>
+    </NotAuthorized>
+</AuthorizeView>
