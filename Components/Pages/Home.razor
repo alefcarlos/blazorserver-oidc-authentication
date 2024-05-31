@@ -1,6 +1,6 @@
 ﻿@page "/"
 @using System.Security.Claims
-@attribute [Authorize]
+@attribute [Authorize(Roles = "DefaultUser")]
 
 <PageTitle>User Claims</PageTitle>
 
